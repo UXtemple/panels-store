@@ -1,3 +1,3 @@
-# panels app
+# panels-store
 
-Binds together `panels-ui`, `panels-store` and provides some containers to create a Panels app.
+Provides a store and actions to create a panels application

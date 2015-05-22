@@ -1,15 +1,13 @@
 {
   "name": "panels-store",
-  "version": "0.0.1",
-  "description": "Panels' store",
+  "version": "0.1.0",
+  "description": "Stores for panels",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production browserify src > ./dist/panels-store.js && uglifyjs ./dist/panels-store.js -cm > ./dist/panels-store.min.js",
-    "livereload": "livereloadify ./playground",
-    "start": "npm run watch & npm run livereload & npm run static",
-    "static": "static ./playground --port 3000 --cache 0",
-    "test": "jest",
-    "watch": "watchify -o ./playground/playground-compiled.js -v -d playground/playground.js"
+    "test": ".bin/test",
+    "prepublish": ".bin/compile",
+    "postpublish": ".bin/clean",
+    "start": ".bin/start"
   },
   "repository": {
     "type": "git",
@@ -17,10 +15,12 @@
   },
   "keywords": [
     "panels",
-    "store"
+    "store",
+    "UXtemple"
   ],
-  "author": "Darío Javier Cravero <dario@uxtemple.com>",
+  "author": "UXtemple <hi@uxtemple.com>",
   "contributors": [
+    "Darío Javier Cravero <dario@uxtemple.com>",
     "Tom Parandyk <tom@uxtemple.com>"
   ],
   "license": "MIT",
@@ -28,57 +28,27 @@
     "url": "https://github.com/UXtemple/panels-store/issues"
   },
   "homepage": "https://github.com/UXtemple/panels-store",
-  "eslintConfig": {
-    "ecmaFeatures": {
-      "arrowFunctions": true,
-      "blockBindings": true,
-      "defaultParams": true,
-      "forOf": true,
-      "jsx": true,
-      "templateStrings": true
-    },
-    "env": {
-      "browser": true,
-      "jasmine": true,
-      "node": true
-    },
-    "globals": {
-      "jest": true
-    },
-    "rules": {
-      "eqeqeq": 2,
-      "curly": 2,
-      "new-cap": false,
-      "quotes": [
-        2,
-        "single"
-      ],
-      "strict": 0
-    }
+  "dependencies": {
+    "flummox": "^4.0.0-alpha2",
+    "immutable": "^3.7.3"
+  },
+  "devDependencies": {
+    "babel": "^5.4.4",
+    "babelify": "^6.1.1",
+    "browserify": "^10.2.1",
+    "envify": "^3.4.0",
+    "livereloadify": "^2.0.0",
+    "mocha": "^2.2.5",
+    "node-static": "^0.7.6",
+    "panels-ui": "^0.1.3",
+    "react": "^0.13.3",
+    "sinon": "^1.14.1",
+    "watchify": "^3.2.1"
   },
   "browserify": {
     "transform": [
-      [
-        "babelify",
-        {
-          "experimental": true
-        }
-      ],
+      "babelify",
       "envify"
     ]
-  },
-  "devDependencies": {
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
-    "envify": "^3.3.0",
-    "livereloadify": "^2.0.0",
-    "node-static": "^0.7.6",
-    "uglify-js": "^2.4.16",
-    "watchify": "^2.4.0"
-  },
-  "dependencies": {
-    "immutable": "^3.7.0",
-    "marty": "^0.9.4",
-    "react": "^0.13.1"
   }
 }
