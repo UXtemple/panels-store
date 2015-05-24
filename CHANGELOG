@@ -1,5 +1,10 @@
 # Change log
 
+## [0.1.1] - 2015-05-24
+### Added
+
+- `title` field to `PanelRecord`.
+
 ## [0.1.0] - 2015-05-23
 ### Added
 

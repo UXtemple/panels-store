@@ -18,10 +18,10 @@ export default class PanelsStore extends Store {
     let obj = {};
 
     panels.forEach(panel => {
-      let { uri, blocks } = panel;
+      let { blocks, title, uri } = panel;
       blocks = List.isList(blocks) ? blocks : List(blocks);
 
-      obj[panel.uri] = new PanelRecord({blocks, uri});
+      obj[panel.uri] = new PanelRecord({blocks, title, uri});
     });
 
     this.setState(this.state.merge(obj));
