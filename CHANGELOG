@@ -1,5 +1,14 @@
 # Change log
 
+## [0.2.0] - 2015-06-07
+### Added
+
+- `getByUri` now uses `Lookup` to match dynamic routes in the store. Routes are matched by
+  [Houkou](https://github.com/deoxxa/houkou) and a _complexity_ comparison is done to ensure that
+  more specific routes are matched. There's lot of room for improvement here.
+- `PanelRecord#from` and `BlockRecord#from` to load raw data structures and do any necessary
+  mappings to immutables.
+
 ## [0.1.1] - 2015-05-24
 ### Added
 
