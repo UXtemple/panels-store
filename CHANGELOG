@@ -1,5 +1,18 @@
 # Change log
 
+## [0.3.0] - 2015-06-12
+### Changed
+
+- Removed memoisation of panels, it will have to be thought out a bit more before it lands again.
+- Removed blocks.
+- Removed actions class. Export raw functions.
+- Extracted stores functionality into raw functions too getting them ready to be stripped off their
+  state soon.
+- Replaced `immutable-js` for `seamless-immutable` as it is lighter and its output are cleaner and
+  backwards compatible with vanilla JS types.
+- Replaced the immutable record for a simple function that returns the values it specifically picked
+  up from the object passed as an argument.
+
 ## [0.2.0] - 2015-06-07
 ### Added
 

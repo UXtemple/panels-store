@@ -1,3 +1,2 @@
-export { default as Actions } from './actions';
-export { default as PanelRecord } from './panel-record';
+export * as Actions from './actions';
 export { default as Store } from './store';

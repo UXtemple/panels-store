@@ -1,11 +1,10 @@
 import * as PanelsStore from '../index';
-import DUMMY_DATA from './dummy-data';
 import { Flux } from 'flummox';
+import DUMMY_DATA from './dummy-data';
 
 class AppFlux extends Flux {
   constructor() {
     super();
-
     this.createActions('panels', PanelsStore.Actions);
     this.createStore('panels', PanelsStore.Store, this);
   }
