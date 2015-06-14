@@ -4,7 +4,7 @@ import Lookup from './lookup';
 
 const Panel = ({app, data, style, title, type, uri}) => ({app, data, style, title, type, uri});
 
-export function load(state, rawPanels) {
+export function load(rawPanels, payload, state) {
   const panels = I(rawPanels.map(Panel));
   panels.filter(({uri}) => DYNAMIC_REGEX.test(uri)).forEach(this::addDynamic);
   return state.merge(panels.asObject(panel => [`${panel.app}${panel.uri}`, panel]));
@@ -55,7 +55,7 @@ export default class PanelsStore extends Store {
     super();
     this.dynamic = {};
     this.state = I({});
-    this.register(flux.getActionIds('panels').load, panels => this.setState(this::load(this.state, panels)));
+    this.register(flux.getActionIds('panels').load, this::load);
   }
 
   // TODO Memoise dynamic hits. Would it be anti-flux to do it somewhere around here? :/
