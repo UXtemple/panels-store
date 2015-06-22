@@ -1,0 +1,3 @@
+export const ADD = 'PANELS:STORE:ADD';
+export const REMOVE = 'PANELS:STORE:REMOVE';
+export const REMOVE_ALL = 'PANELS:STORE:REMOVE_ALL';

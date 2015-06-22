@@ -1,12 +1,12 @@
 export default [{
   app: 'uxtemple.com',
-  uri: '/'
+  path: '/'
 }, {
   app: 'uxtemple.com',
-  uri: '/the-team'
+  path: '/the-team'
 }, {
   app: 'uxtemple.com',
-  uri: '/the-team/:name',
+  path: '/the-team/:name',
   data: {
     name: ':name'
   }
