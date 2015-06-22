@@ -21,6 +21,6 @@ console.log('Welcome to panels-store playground.');
 console.log('https://store.usepanels.com');
 console.log('Playground module', Playground);
 
-console.log('store:', redux.getState('store').store);
+console.log('store:', redux.getState().store);
 console.log('find("https://uxtemple.com/the-team/dario")', find("https://uxtemple.com/the-team/dario"));
 console.log('find("https://uxtemple.com/the-team/tom")', find("https://uxtemple.com/the-team/tom"));
