@@ -1,28 +1,33 @@
-import { ADD, REMOVE_ALL, REMOVE } from './action-types';
+import * as t from './action-types';
 
-export function add({app, path, data={}, style={}, title, typeName}) {
+export function add({app, data={}, path, title, type}) {
   return {
-    type: ADD,
-    app,
-    data,
-    path,
-    style,
-    title,
-    typeName
+    type: t.ADD,
+    payload: {
+      app,
+      data,
+      path,
+      title,
+      type
+    }
   }
 }
 
 export function remove({app, path}) {
   return {
-    type: REMOVE,
-    app,
-    path
+    type: t.REMOVE,
+    payload: {
+      app,
+      path
+    }
   }
 }
 
 export function removeAll(app) {
   return {
-    type: REMOVE_ALL,
-    app
+    type: t.REMOVE_ALL,
+    payload: {
+      app
+    }
   }
 }

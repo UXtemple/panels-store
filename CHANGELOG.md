@@ -1,5 +1,11 @@
 # Change log
 
+## [0.5.0] - 2015-07-25
+### Changed
+- ActionCreators to [FSA](https://github.com/acdlite/flux-standard-action).
+- Examples to redux 1.0.0-rc.
+- Renamed `typeName` to `type`.
+
 ## [0.4.0] - 2015-06-21
 ### Changed
 - Moved lookup into its own package [rlookup](https://github.com/UXtemple/rlookup).

@@ -8,7 +8,7 @@ import reducer from '../reducer';
 
 describe('reducer', () => {
   it('handles ADD', () => {
-    const newState = reducer(i({}), {type: ADD, ...PANEL});
+    const newState = reducer(i({}), {type: ADD, payload: PANEL});
     assert(newState.hasOwnProperty(PANEL.app), 'has app');
     assert(Array.isArray(newState[PANEL.app].lookup), 'has lookup array');
     assert(newState[PANEL.app].hasOwnProperty('panels'), 'has panels object');
@@ -26,7 +26,7 @@ describe('reducer', () => {
         }
       }
     });
-    const newState = reducer(iState, {type: REMOVE, app: PANEL.app, path: PANEL.path});
+    const newState = reducer(iState, {type: REMOVE, payload: {app: PANEL.app, path: PANEL.path}});
     assert(newState.hasOwnProperty(PANEL.app), 'has app');
     assert(!newState[PANEL.app].panels.hasOwnProperty(PANEL.path), 'doesn\'t have PANEL.path');
     assert(newState[PANEL2.app].panels.hasOwnProperty(PANEL2.path), 'has PANEL2.path');
@@ -38,7 +38,7 @@ describe('reducer', () => {
         [PANEL.name]: PANEL.component
       }
     });
-    const newState = reducer(iState, {type: REMOVE_ALL, app: PANEL.app});
+    const newState = reducer(iState, {type: REMOVE_ALL, payload: {app: PANEL.app}});
     assert(!newState.hasOwnProperty(PANEL.app), 'doesn\'t have app');
   });
 });

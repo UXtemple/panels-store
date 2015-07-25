@@ -5,25 +5,24 @@ import assert from 'assert';
 
 describe('actions', () => {
   it('#add', () => {
-    const {type, app, data, path, style, title, typeName} = add(PANEL);
+    const {type, payload: {app, data, path, title, type: typeName}} = add(PANEL);
     assert(type === ADD, 'type');
     assert(app === PANEL.app, 'payload: app');
     assert(data === PANEL.data, 'payload: data');
     assert(path === PANEL.path, 'payload: path');
-    assert(style === PANEL.style, 'payload: style');
     assert(title === PANEL.title, 'payload: title');
-    assert(typeName === PANEL.typeName, 'payload: typeName');
+    assert(typeName === PANEL.type, 'payload: type');
   });
 
   it('#remove', () => {
-    const {type, app, path} = remove({app: PANEL.app, path: PANEL.path});
+    const {type, payload: {app, path}} = remove({app: PANEL.app, path: PANEL.path});
     assert(type === REMOVE, 'type');
     assert(app === PANEL.app, 'payload: app');
     assert(path === PANEL.path, 'payload: path');
   });
 
   it('#removeAll', () => {
-    const {type, app} = removeAll(PANEL.app);
+    const {type, payload: {app}} = removeAll(PANEL.app);
     assert(type === REMOVE_ALL, 'type');
     assert(app === PANEL.app, 'payload: app');
   });

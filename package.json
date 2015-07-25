@@ -1,6 +1,6 @@
 {
   "name": "panels-store",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Stores for panels",
   "main": "index.js",
   "scripts": {
@@ -43,8 +43,7 @@
     "lodash": "^3.9.3",
     "mocha": "^2.2.5",
     "node-static": "^0.7.6",
-    "react": "^0.13.3",
-    "redux": "^0.12.0",
+    "redux": "^1.0.0-rc",
     "watchify": "^3.2.2"
   },
   "browserify": {

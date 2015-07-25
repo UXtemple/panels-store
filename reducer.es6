@@ -3,7 +3,7 @@ import i from 'seamless-immutable';
 
 const DYNAMIC_PATH = /:.+/;
 
-export default function(state=i({}), {type, ...payload}) {
+export default function(state=i({}), {type, payload}) {
   switch (type) {
     case ADD: return add(state, payload);
     case REMOVE: return remove(state, payload);
@@ -12,7 +12,7 @@ export default function(state=i({}), {type, ...payload}) {
   }
 }
 
-function add(state, {app, data, path, style, title, typeName}) {
+function add(state, {app, data, path, title, type}) {
   const {
     [app]: {
       lookup = [],
@@ -26,7 +26,7 @@ function add(state, {app, data, path, style, title, typeName}) {
       lookup: DYNAMIC_PATH.test(path) ? lookup.concat(path) : lookup,
       panels: {
         ...panels,
-        [path]: {app, data, path, style, title, typeName}
+        [path]: {app, data, path, title, type}
       }
     }
   }

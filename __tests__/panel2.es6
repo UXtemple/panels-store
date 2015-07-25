@@ -3,6 +3,5 @@ export const data = {
   id: ':id'
 };
 export const path = '/:id';
-export const style = {};
 export const title = 'title :id';
-export const typeName = 'Panel2Component';
+export const type = 'Panel2Component';
